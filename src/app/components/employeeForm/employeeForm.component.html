@@ -1,0 +1,58 @@
+<section class="app_container">
+    <h2>Employee Details</h2>
+    <span class="notify">notify!!&nbsp;<mat-slide-toggle [(ngModel)]="isNotify" (click)="enableNotification()">Slide me!</mat-slide-toggle></span>
+    <div class="example-container">
+        <mat-form-field>
+            <input matInput placeholder="Name" [(ngModel)]="name">
+            <button mat-button *ngIf="name" matSuffix mat-icon-button aria-label="Clear" (click)="name=''">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Age" [(ngModel)]="age">
+            <button mat-button *ngIf="age" matSuffix mat-icon-button aria-label="Clear" (click)="age=''">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Company" [(ngModel)]="company">
+            <button mat-button *ngIf="company" matSuffix mat-icon-button aria-label="Clear" (click)="company=''">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
+    <div class="button-row">
+        <button mat-raised-button color="primary" (click)="submitData()">Submit</button>
+    </div>
+</section>
+<section>
+    <div class="example-container mat-elevation-z8">
+        <mat-table #table [dataSource]="dataSource">
+            <ng-container matColumnDef="position">
+            <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.company}} </mat-cell>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="weight">
+            <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="symbol">
+            <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.age}} </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+    </div>
+</section>

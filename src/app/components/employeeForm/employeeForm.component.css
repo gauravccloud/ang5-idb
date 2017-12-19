@@ -1,0 +1,35 @@
+.app_container {
+    padding: 30px;
+}
+
+.mat-form-field {
+    width: 100%;
+}
+
+.input-container {
+    padding: 10px;
+}
+
+.b-input {
+    margin-right: 0px;
+    float: left;
+    margin-bottom: 0px;
+    font-size: 1.1rem;
+}
+
+.button-row {
+    text-align: center
+}
+
+.mat-input-infix {
+    font-size: 14px;
+}
+
+.example-container {
+    padding: 10px
+}
+
+.notify {
+    float: right;
+    padding: 10px;
+}
